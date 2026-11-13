@@ -9,7 +9,11 @@ website:
     foreground: "#e2e8f0"
     left:
       - href: index.qmd
-        text: "🏟️ Explorer"
+        text: "🏠 Overview"
+      - href: stadium-explorer.qmd
+        text: "🗺️ Ballpark Explorer"
+      - href: baltimore-wall.qmd
+        text: "🧱 Camden Yards Story"
       - href: rankings.qmd
         text: "📊 Park Rankings"
       - href: data.qmd
