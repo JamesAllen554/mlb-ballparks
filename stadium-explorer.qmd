@@ -93,19 +93,20 @@ Click any ballpark pin below to view its physical specifications, altitude, roof
 #| message: false
 #| warning: false
 
-leaflet(parks_2026, height = 480, options = leafletOptions(minZoom = 3, maxZoom = 14)) |>
-  addProviderTiles("CartoDB.DarkMatter") |>
+leaflet(parks_2026, height = 500, options = leafletOptions(minZoom = 3, maxZoom = 14)) |>
+  addTiles() |>
   setView(lng = -96.5, lat = 39.5, zoom = 4) |>
   addCircleMarkers(
     lng = ~lng,
     lat = ~lat,
-    radius = ~pmax(7, (index_hr - 70) / 4),
+    radius = ~pmax(8, (index_hr - 65) / 4),
     fillColor = ~marker_color,
     fillOpacity = 0.85,
     color = "#ffffff",
-    weight = 1.5,
+    weight = 2,
+    label = ~paste0(venue_name, " (", team, " • HR Index: ", index_hr, ")"),
     popup = ~paste0(
-      "<div style='font-family: sans-serif; color: #0f172a; min-width: 200px;'>",
+      "<div style='font-family: sans-serif; color: #0f172a; min-width: 220px;'>",
       "<h4 style='margin: 0 0 4px 0; font-weight: bold;'>", venue_name, "</h4>",
       "<div style='color: #475569; font-size: 0.85rem; margin-bottom: 8px;'>", team, " • ", city, "</div>",
       "<div style='display: flex; gap: 8px; margin-bottom: 8px;'>",
